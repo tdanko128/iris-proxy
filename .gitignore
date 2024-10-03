@@ -1,0 +1,23 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore environment variable files
+.env
+
+# Ignore configuration files
+config.json
+
+# Ignore log files
+*.log
+*.html
+
+# Ignore directories
+iris-proxy
+
+# Ignore specific files
+sample.json
+temp.txt
+test.py
+private.key
+public.crt

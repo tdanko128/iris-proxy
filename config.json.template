@@ -1,0 +1,10 @@
+{
+    "API": {
+        "API_KEY": "your_api_key_here"
+    },
+    "IRIS": {
+        "IRIS_API_KEY": "your_iris_api_key",
+        "IRIS_HOST" : "your_fqdn_for_iris"
+    },
+    "VERIFY_CERTS" : true
+}

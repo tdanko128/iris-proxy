@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  iris_proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 5000  # Expose the Iris Proxy app on port 5000
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"  # Map host's port 8443 to container's port 8443
+    volumes:
+      - ./certs/public.crt:/etc/ssl/certs/your_cert.crt  # Path to your Public SSL certs
+      - ./certs/private.key:/etc/ssl/private/your_key.key  # Path to your Public SSL certs
+      - ./nginx-logs:/var/log/nginx
+    depends_on:
+      - iris_proxy  # Ensure iris_proxy starts before nginx
